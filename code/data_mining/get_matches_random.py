@@ -35,13 +35,10 @@ with open('matches_random.csv', 'a') as csvfile:
         print('\tPegando partidas do jogador',players[i],'!!!')
         for ano in years:
             for mes in months:
-                flag = 0
-                while flag != 1:
-                    try:
-                        ma_atual = get_player_games_by_month(players[i],ano,mes)
-                        flag=1
-                    except:
-                        flag=-1
+                try:
+                    ma_atual = get_player_games_by_month(players[i],ano,mes)
+                except:
+                    continue
 
                 if len(ma_atual.json['games']) == 0:
                     # o player não jogou partidas nesse mes/ano
