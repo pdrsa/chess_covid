@@ -49,3 +49,24 @@ def confidenceInterval(array):
     superior = mu + 1.96*sigma
     
     return [inferior, superior]
+
+# Parameters: Panda Series with the Values to Bootstrap, Number of Samples Required
+# Returns an array with all the medians from the bootstrap process.
+
+def makeBootstrap(df, n):
+    values = np.zeros(n)
+    for i in range(n):
+        sample    = nme.sample(len(df), replace = True)
+        values[i] = sample.mean()
+    return values
+
+# Receives an array and return its init and final percentage values
+def percentile(bm_values, init, final):
+#     bm_values = np.sort(bm_values)
+#     per1      = int(len(bm_values) / 100 * init)
+#     per2      = int(len(bm_values) / 100 * final)
+#     inferior  = bm_values[per1]
+#     superior  = bm_values[per2]
+    inferior = np.percentile(bm_values, init)
+    superior = np.percentile(bm_values, final)
+    return [inferior, superior]
