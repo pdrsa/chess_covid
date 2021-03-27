@@ -5,7 +5,9 @@ Trabalho desenvolvido para a disciplina de Introdução a Ciência dos Dados na 
 
 ## Integrantes
 
-Antônio Isaac Silva Lima: 20019006361
+Antônio Isaac Silva Lima: 2019006361
+
+Heitor de Paula Santos Damasceno: 2019006671
 
 João Antonio Oliveira Pedrosa: 2019006752
 
